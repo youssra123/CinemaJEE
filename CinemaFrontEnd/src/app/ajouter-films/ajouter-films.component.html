@@ -1,0 +1,58 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Valid information is required to register. <span class="req"><small>
+                                required *</small></span></legend>
+
+                    <div class="form-group">
+                        <label for="Titre"><span class="req">* </span> Titre: </label>
+                        <input required type="text" [(ngModel)]="film.titre" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter the title..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description"><span class="req">* </span> Description: </label>
+                        <input class="form-control" type="text" [(ngModel)]="film.description" name="description" id="txt" required
+                            placeholder="Enter your description" />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Realisateur"><span class="req">* </span> Realisateur : </label>
+                        <input class="form-control" type="text" [(ngModel)]="film.realisateur" name="realisateur" id="txt"
+                            placeholder="Realisateur" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateSortie"><span class="req">* </span> Date de sortier: </label>
+                        <input class="form-control" required type="datetime" [(ngModel)]="film.dateSortie" name="dateSortie"
+                            id="dateSortie" placeholder="fullstack/backend/developer" />
+                        <div class="status" id="status"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Duree"><span class="req">* </span> Duree: </label>
+                        <input class="form-control" required type="number" [(ngModel)]="film.duree" name="duree"
+                            id="Duree" placeholder="fullstack/backend/developer" />
+                        <div class="status" id="status"></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
